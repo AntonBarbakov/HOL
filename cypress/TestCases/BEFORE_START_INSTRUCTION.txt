@@ -1,0 +1,6 @@
+After DB reload for succes test cases work you should to complite next steps:
+
+1. Create 2 courses with names "His-Dark-Materials", and "Dark Arts"
+2. Create Master Lesson with name "Horcrux" and SKU "Horcrux"
+3. Add new inctructor admin to Hogwarts Institution
+4. Update Lesson id, Master lesson ID, and Test instructor id in cypress.config.js

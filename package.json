@@ -1,0 +1,39 @@
+{
+  "name": "hol-automation",
+  "version": "1.1.0",
+  "description": "HOL automation framework",
+  "main": "index.js",
+  "scripts": {
+    "cy": "npx cypress open",
+    "cy-run-integration": "npx cypress run --spec cypress/TestCases/integration/*/*.spec.js",
+    "cy-run-all": "npx cypress run --spec cypress/TestCases/*/*/*.spec.js",
+    "delete-reports": "rm -rf cypress/reports/* || true",
+    "send-report": "node sendmail.js",
+    "cy-run-integration-sendreport": "npm run delete-reports && npm run cy-run-integration && npm run send-report",
+    "cy-run-all-sendreport": "npm run delete-reports && npm run cy-run-all && npm run send-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Science-Interactive/hol-automation.git"
+  },
+  "author": "Anton Barbakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Science-Interactive/hol-automation/issues"
+  },
+  "devDependencies": {
+    "cypress": "10.8.0",
+    "cypress-mochawesome-reporter": "^3.2.3",
+    "cypress-multi-reporters": "^1.6.2",
+    "mocha-junit-reporter": "^2.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.2",
+    "mochawesome-report-generator": "^6.2.0",
+    "playwright-webkit": "1.25.2"
+  },
+  "dependencies": {
+    "cypress-xpath": "^2.0.1",
+    "dotenv": "^16.0.3",
+    "nodemailer": "^6.8.0"
+  }
+}
